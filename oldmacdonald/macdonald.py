@@ -18,7 +18,7 @@ def choose_article(sound):
     return 'an' if sound[0].lower() in 'aeiou' else 'a'
 
 
-def print_verse(animal, sound):
+def build_verse(animal, sound):
     lines = [had_a_farm(), and_on_that_farm(animal), with_a(sound), had_a_farm()]
     return "\n".join(lines) + "\n"
 
@@ -30,4 +30,4 @@ animals = {'pig': 'oink',
            'dog': 'bark'}
 
 for name in animals:
-    print print_verse(name, animals[name])
+    print build_verse(name, animals[name])
