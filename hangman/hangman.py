@@ -15,9 +15,21 @@ def check_letter(letter):
 def hide_word():
     display = []
     for letter in secret:
-        if letter in correct_letters or letter == ' ':
+        if _letter_guessed(letter):
             display.append(letter)
         else:
             display.append('-')
 
     return ' '.join(display)
+
+
+def solved():
+    guessed = True
+    for letter in secret:
+        if not _letter_guessed(letter):
+            return False
+    return guessed
+
+
+def _letter_guessed(letter):
+    return letter in correct_letters or letter == ' '
